@@ -20,12 +20,12 @@ object UrbanPopulation {
    val data= spark.read.csv(args(0)).rdd
    
    val result = data.map( line =>{
-     //val uPopulation = line.getString(10).replaceAll(","," ")
-     val uPopulation = Option(line.getString(10)).getOrElse("")
+    // val uPopulation = line.getString(10).replaceAll(","," ")
+     val uPopulation = (Option(line.getString(10)).getOrElse("")).replaceAll(",", "")
      var uPopNum = 0L
       
      if(uPopulation.length() > 0)
-       uPopNum = Long.parseLong(uPopulation)
+       uPopNum = Long.parseLong(uPopulation.trim())
        
        (uPopNum, line.getString(0))
    })
