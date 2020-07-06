@@ -49,6 +49,7 @@ object Youngest {
 			.take(1)
 		
 			//result.foreach{ println }
+			
 	    spark.sparkContext.parallelize(result.toSeq, 1).saveAsTextFile(args(1))
 			
 			spark.stop
