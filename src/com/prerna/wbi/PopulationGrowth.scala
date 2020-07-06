@@ -33,7 +33,7 @@ object PopulationGrowth {
 			.map(rec => {
 			  val minPop = (rec._2.min)
 			  val maxPop = (rec._2.max)
-			  println(maxPop)
+			  //println(maxPop)
 			  var perGrowth = 0D
 			    perGrowth=  ((maxPop -minPop)/minPop) * 100
 			    (rec._1, perGrowth)
